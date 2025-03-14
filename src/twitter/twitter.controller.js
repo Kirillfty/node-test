@@ -4,6 +4,7 @@ import { Create } from './twitter.servies.js';
 const router = Router();
 const twitter = new Create();
 router.post('/',(req,res) =>{
+    console.log(req.headers);
     if(!req.body?.text?.length){
         res.status(400).json({message:'bad request'});
     }
